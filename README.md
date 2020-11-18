@@ -33,5 +33,5 @@ Nedan finns två alternativ till ett enkelt spel. Båda två kräver följande:
 - Länka din `solutions/<DIN-MAPP>/index.html` till  `./index.html`
 
 # Resurser
-- MDN
+- [The Js Way](https://github.com/thejsway/thejsway)
 
