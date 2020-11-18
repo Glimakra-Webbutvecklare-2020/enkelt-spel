@@ -1,5 +1,6 @@
+/* Functions */
 function ask(question) {
-    let userAnswer = prompt("This is question").toLowerCase();
+    let userAnswer = prompt(question).toLowerCase();
     let response = undefined;
 
     switch (userAnswer) {
@@ -20,15 +21,24 @@ function ask(question) {
     return response;
 }
 
-const gameName = "A game";
-let play = prompt(`Do you want to play ${gameName}?`).toLowerCase();
-
-let isPlaying = play == "y" || play == "yes";
-
-while (isPlaying) {
-    response = ask("What is your next move?");
-
-    console.log(response);
+function getComputerResponse() {
+    // Let a random value determine the response
+    return "Not implemented yet";
 }
 
-alert("Good bye!");
+/* Initalization */
+const gameName = "a game";
+
+/* Game Loop */
+let play = prompt(`Do you want to play ${gameName}?`).toLowerCase();
+let isPlaying = play == "y" || play == "yes";
+while (isPlaying) {
+    response = ask("What is your move?");
+
+    alert(
+        `Your move was ${response} and computer was ${getComputerResponse()}`
+    );
+}
+
+/* Exit */
+alert("Goodbye!");
