@@ -52,6 +52,8 @@ function attackHandler() {
     game.players[0].render();
     game.players[1].render();
 
+    console.log(game);
+
     if(game.players[0].health <= 0) {
         alert("Cat wins!")
         newGame();
@@ -71,14 +73,36 @@ function attackHandler() {
 };
 
 function newGame() {
+    parseValues();
+    
     game = new Game();
+    let characterStats = parseValues();
+    let totalPoints = characterStats.atk + characterStats.def;
+
     game.players = [
-        new Character(0, "https://images.pexels.com/photos/1716861/pexels-photo-1716861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"), 
-        new Character(1, "https://images.pexels.com/photos/4438556/pexels-photo-4438556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        new Character({
+            ID: 0, 
+            imageURL: "https://images.pexels.com/photos/1716861/pexels-photo-1716861.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            atk: characterStats.atk,
+            def: characterStats.def
+        }), 
+        new Character({
+            ID: 1, 
+            imageURL: "https://images.pexels.com/photos/4438556/pexels-photo-4438556.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+            atk: totalPoints / 2,
+            def: totalPoints / 2
+        })
     ] 
+
     game.start();
+    document.getElementById("atkButton").style.display = "block";
+    document.getElementsByClassName("character-creation")[0].style.display = "none";
+
 };
 
-(function main() {
-    newGame();
-}());
+function parseValues() {
+    let atk = document.getElementById("atk").value;
+    let def = document.getElementById("def").value;
+
+    return { atk: parseInt(atk) + 10, def: parseInt(def) };
+};
