@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: rgb(11, 92, 129);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    height: 300px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    height: calc(100vh - 300px);
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.container h1 {
+    font-size: 48px;
+    text-align: center;
+    color: rgb(36, 36, 36)
+}
+
+.container .row {
+    display: flex;
+    justify-content: center;
+}
+
+.container .row button {
+    width: 100%;
+    padding: 1em;
+    border: none;
+    outline: none;
+    background-color: rgb(50, 159, 209);
+    transition: background-color 180ms ease;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+}
+
+.container .row button img {
+   width: 100%;
+   height: 100%;
+   transition: transform 1s linear;
+   object-fit: contain;
+   display: flex;
+   justify-content: center;
+}
+
+.container .row button:hover {
+    background-color: rgb(12, 127, 180);
+}
+
+.container .row button:hover > img {
+    transform: rotate(360deg);
+}
+
+.container ul {
+    margin: 0;
+    padding: 0;
+    max-height: 500px;
+    overflow: auto;
+}
+
+.container header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: rgb(224, 224, 224);
+}
+
+.container header span {
+    border-right: 1px solid #000000;
+    padding: 1em;
+}
+
+.container header span:last-child {
+    border-right: none;
+}
+
+.container ul li {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background-color: #ffffff;
+}
+
+.container ul li span {
+    border-right: 1px solid gray;
+    border-bottom: 1px solid gray;
+    padding: 1em;
+}
+
+.container ul li span:last-child {
+    border-right: none;
+}
+
+.container ul li:last-child > span {
+    border-bottom: none;
+}

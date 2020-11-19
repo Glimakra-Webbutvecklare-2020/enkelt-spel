@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Back To All Games</a>
+        <span>Rock Paper Scissor</span>
+    </nav>
+
+    <main>
+        <div class="container">
+            <h1>Make Your Move</h1>
+            <div class="row">
+                <button onclick="startGame('rock')">
+                    <img src="https://icon-library.com/images/rock-icon-png/rock-icon-png-29.jpg" alt="">
+                </button>
+                <button onclick="startGame('paper')">
+                    <img src="https://icons-for-free.com/iconfiles/png/512/extension+file+format+paper+icon-1320084901449897170.png" alt="">
+                </button>
+                <button onclick="startGame('scissor')">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Scissors_icon_black.svg/1200px-Scissors_icon_black.svg.png" alt="">
+                </button>
+            </div>
+            
+            <header>
+                <span>You</span>
+                <span>Computer</span>
+                <span>Winner</span>  
+            </header>
+
+            <ul id="results-ul"></ul>
+
+            <footer>
+                <button onclick="reset()">Reset</button>
+            </footer>
+        </div>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
+</html>
