@@ -13,12 +13,27 @@
         <span>Pokemon Fight</span>
     </nav>
 
+    <div class="character-creation">
+        <form>
+            <div class="form-group">
+                <label>Attack Damage</label>
+                <input id="atk" type="range" min="1" max="14">
+            </div>
+            <div class="form-group">
+                <label>Defence</label>
+                <input id="def" type="range" min="1" max="14">
+            </div>
+        </form>
+
+        <button onclick="newGame()">Start Game</button>
+    </div>
+
     <main>
         <div class="container">
             
         </div>
 
-        <button onclick="attackHandler()">Attack</button>
+        <button id="atkButton" onclick="attackHandler()">Attack</button>
     </main>
 
     <script src="./character.js"></script>

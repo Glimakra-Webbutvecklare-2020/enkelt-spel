@@ -1,12 +1,12 @@
 class Character {
     
-    constructor(id, imageURL) {
+    constructor(config) {
         this.health = 100;
-        this.attackPower = 10;
-        this.defencePower = 5;
+        this.attackPower = config.atk;
+        this.defencePower = config.def;
         this.evadeActive = false;
-        this.id = id;
-        this.imageURL = imageURL;
+        this.id = config.ID;
+        this.imageURL = config.imageURL;
         this.renderTools = new RenderTools();
     };
 

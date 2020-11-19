@@ -45,6 +45,7 @@ main button {
     outline: none;
     cursor: pointer;
     transition: background-color 180ms ease;
+    display: none;
 }
 
 main button:hover {
