@@ -6,37 +6,31 @@ class Character {
         this.attackPower = config.atk;
         this.defencePower = config.def;
         this.imageURL = config.imageURL;
-        this.health = 100;
+        this.health = 100; // initial health is 100
         this.evadeActive = false;
     };
 
-    attack(character) {
+    attack(character) { // gets called when user hits the button with a sword
 
-        if(!character.evadeActive) {
+        if(!character.evadeActive) { // evade was not active so damage should be dealt
             let randDmg = Math.round(Math.random() * this.attackPower);
             let randDef = Math.round(Math.random() * character.defencePower);
     
-            if(randDef > randDmg) {
+            if(randDef > randDmg) { // the player will block the next incomming damage
                 character.evadeActive = true;
                 return;
             };
 
-            character.health -= randDmg - randDef;
+            character.health -= randDmg - randDef; // remove health equal to the ( dmg-def )
             return;
         };
 
 
-        character.evadeActive = false;
+        character.evadeActive = false; // if evade was active then remove if for the enxt round
         return;
     };
 
-    evade() {
-        let probability = [false, true, true, false, false];
-        this.evadeActive = probability[Math.floor(Math.random() * probability.length)];
-        return;
-    };
-
-    getProps() {
+    getProps() { // for rendering purposes, easier to loop and display data in an array
         return [
             {key: "Character", value: this.characterName },
             {key: "Health", value: this.health}, 
