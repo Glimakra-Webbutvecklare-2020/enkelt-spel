@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
-    <title>Document</title>
+    <title>Pokemon Fight</title>
 </head>
 <body>
     
@@ -50,6 +50,7 @@
                         <div class="thumbnail">
                             <img :src="player.imageURL" alt="">
                         </div>
+                        <div class="health" v-bind:style="{ opacity: 100 - player.health + '%' }"></div>
                         <div class="stats">
                             <ul>
                                 <li v-for="stat of player.getProps()">
@@ -63,7 +64,10 @@
 
                 <div class="actions">
                     <button @click="startGame()">Exit</button>
-                    <button @click="attack()">Attack</button>
+                    <button @click="attack()">
+                        <img src="./images/sword.png" alt="">
+                    </button>
+                    <button @click="restart()">Restart</button>
                 </div>
             </div>
 

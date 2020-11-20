@@ -11,16 +11,29 @@ class Character {
     };
 
     attack(character) {
-        character.health -= ( this.attackPower - character.defencePower );
-        return { 
-            attackerHealth: this.health,
-            defenderHealth: character.health
+
+        if(!character.evadeActive) {
+            let randDmg = Math.round(Math.random() * this.attackPower);
+            let randDef = Math.round(Math.random() * character.defencePower);
+    
+            if(randDef > randDmg) {
+                character.evadeActive = true;
+                return;
+            };
+
+            character.health -= randDmg - randDef;
+            return;
         };
+
+
+        character.evadeActive = false;
+        return;
     };
 
     evade() {
         let probability = [false, true, true, false, false];
         this.evadeActive = probability[Math.floor(Math.random() * probability.length)];
+        return;
     };
 
     getProps() {
@@ -32,9 +45,4 @@ class Character {
             {key: "Defence", value: this.defencePower}
         ]
     };
-};
-
-
-function calcOpacity(health) {
-    return 100 - health;
 };
