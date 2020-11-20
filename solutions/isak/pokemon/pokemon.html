@@ -13,29 +13,66 @@
         <span>Pokemon Fight</span>
     </nav>
 
-    <div class="character-creation">
-        <form>
-            <div class="form-group">
-                <label>Attack Damage</label>
-                <input id="atk" type="range" min="1" max="14">
-            </div>
-            <div class="form-group">
-                <label>Defence</label>
-                <input id="def" type="range" min="1" max="14">
-            </div>
-        </form>
 
-        <button onclick="newGame()">Start Game</button>
-    </div>
 
     <main>
-        <div class="container">
-            
-        </div>
+        <div id="app">
 
-        <button id="atkButton" onclick="attackHandler()">Attack</button>
+            <div id="create-character" v-if="!gameRunning">
+                <div class="form">
+                    <h1>Create your character</h1>
+
+                    <div class="form-group">
+                        <label for="">Character Name</label>
+                        <input type="text" v-model="characterData.characterName">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Character ImageURL</label>
+                        <input type="text" v-model="characterData.imageURL">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Character Defence</label>
+                        <input type="number" value="10" min="1" max="10" v-model="characterData.defence">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Character Attack</label>
+                        <input type="number" value="10" min="1" max="10" v-model="characterData.attack">
+                    </div>
+                    <div class="button-group">
+                        <button @click="createCharacter()">Create</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="game" v-if="gameRunning">
+                <div class="players">
+                    <div v-for="player of game.players" class="character">
+                        <div class="thumbnail">
+                            <img :src="player.imageURL" alt="">
+                        </div>
+                        <div class="stats">
+                            <ul>
+                                <li v-for="stat of player.getProps()">
+                                    <span>{{stat.key}}</span>
+                                    <span>{{stat.value}}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button @click="startGame()">Exit</button>
+                    <button @click="attack()">Attack</button>
+                </div>
+            </div>
+
+
+        </div>
     </main>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./character.js"></script>
     <script src="./main.js"></script>
 </body>

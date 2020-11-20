@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+nav {
+    height: 300px;
+    background-color: rgb(39, 39, 39);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+
+    a, span {
+        font-size: 32px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+
+main {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(58, 58, 58);
+
+    #app {
+        width: 100%;
+        height: 100%;
+
+        #create-character {
+            display: flex;
+            justify-content: center;
+            .form {
+                width: 500px;
+                height: 500px;
+                background-color: #ffffff;
+                margin-top: 2em;
+                display: flex;
+                flex-direction: column;
+                padding: 1em;
+                h1 {
+                    margin: 0;
+                }
+
+                .form-group {
+                    display: flex;
+                    flex-direction: column;
+                    label {
+                        margin: 8px 0;
+                    }
+
+                    input {
+                        padding: .77em;
+                    }
+                }
+
+                .button-group {
+                    margin-top: 1em;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
+                        padding: .6em;
+                        width: 200px;
+                    }
+                }
+            }
+        }
+
+        #game {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .players {
+                width: 50%;
+                display: inherit;
+                flex-direction: row;
+                .character {
+                    background-color: rgb(231, 231, 231);
+                    margin: 10px;
+                    width: 100%;
+                    .thumbnail {
+                        height: 300px;
+                        width: 100%;
+
+                        img {
+                            width: inherit;
+                            height: 100%;
+                        }
+                    }
+
+                    ul {
+                        list-style: none;
+                        margin: 0;
+                        padding: 1em;
+
+                        li {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 1em;
+                            border-bottom: 1px solid rgb(207, 207, 207);
+
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .actions {
+                width: calc(50% - 10px * 2);
+                margin: 10px;
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                grid-gap: .76em;
+                button {
+                    width: 100%;
+                    padding: 1em;
+                    border: none;
+                    cursor: pointer;
+                    transition: background-color 185ms ease;
+                    
+                    &:hover {
+                        background-color: #616161;
+                    }
+                }
+            }
+        }
+    }
+}
