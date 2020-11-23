@@ -123,49 +123,55 @@ function pokemonFight() {
             return Math.floor(this.xp/3)+1;
         },
         stats: {
-            str: 10,
-            dex: 10,
-            con: 10,
-            int: 10,
-            wis: 10,
-            cha: 10,
-            health() {
-                return (player.lvl()*10)+Math.floor((this.con-10)/2);
+            health: 0,
+            attackPower: 0,
+            defencePower: 0,
+            healthInit() {
+                this.health = player.lvl()*10;
             }
-            attackPower() {
-                return (player.lvl()*10)+Math.floor((this.str-10)/2);
+            attackPowerInit() {
+                this.attackPower = player.lvl()*10;
             }
-            defencePower() {
-                return (player.lvl()*10)+Math.floor((this.dex-10)/2);
+            defencePowerInit() {
+                this.defencePower = player.lvl()*10;
             }
-            attack() {
-
+            attack(target) {
+                if (this.attackPower > target.stats.defencePower {
+                    target.stats.health -= this.attackPower;
+                }
+            }
+            evade() {
+                reply = false;
+                if (this.defencePower > target.stats.defencePower) {
+                    reply = true;
+                }
+                return reply;
             }
         }
     };
     let enemy = {
         name: ``,
-        lvl: 0, // choose lvl to modify health, attack and defence
+        lvl: 1, // choose lvl to modify health, attack and defence
         stats: {
-            str: 10,
-            dex: 10,
-            con: 10,
-            int: 10,
-            wis: 10,
-            cha: 10,
-            health() {
-                return (enemy.lvl()*6)+Math.floor((this.con-10)/2);
+            health: 0,
+            attackPower: 0,
+            defencePower: 0,
+            healthInit() {
+                this.health = (enemy.lvl*6);
             }
-            attackPower() {
-                return (enemy.lvl()*6)+Math.floor((this.str-10)/2);
+            attackPowerInit() {
+                this.attackPower = (enemy.lvl*6);
             }
-            defencePower() {
-                return (enemy.lvl()*6)+Math.floor((this.dex-10)/2);
+            defencePowerInit() {
+                this.defencePower = (enemy.lvl*6);
             }
         }
     };
-    const myObjects =[
-        player, enemy
+    const players =[
+        player,
+    ];
+    const enemys =[
+        enemy,
     ];
     let game = true;
     while (game === true) {
