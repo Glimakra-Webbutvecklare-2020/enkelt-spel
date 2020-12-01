@@ -1,3 +1,45 @@
+/* Global */
+
+html,
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+}
+
+main {
+    width: 100%;
+    padding: 16px;
+}
+
+h1,
+h3,
+ul,
+.play-link {
+    text-align: center;
+}
+
+.play-link {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    text-decoration: none;
+    padding: 1rem;
+    border: 1px solid green;
+    border-radius: 12px;
+    color: black;
+    background-color: rgb(103, 170, 103);
+}
+
+.play-link:hover {
+    background-color: lightgreen;
+}
+
 .content {
     width: 50%;
     margin: 0 auto;
@@ -32,10 +74,13 @@ ul {
     cursor: pointer;
 }
 
-.result {
+.centered {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.result {
     font-size: 3rem;
     width: 300px;
 }
