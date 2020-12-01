@@ -1,0 +1,91 @@
+.content {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.list-group {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 400px;
+    list-style: none;
+    align-items: center;
+}
+
+ul {
+    padding: 0;
+}
+
+.choice {
+    list-style: none;
+    padding: 2rem;
+    border: 1px solid black;
+    margin: 2rem 3rem;
+    width: 150px;
+    height: 150px;
+}
+
+#playerChoices .choice:hover {
+    cursor: pointer;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    width: 300px;
+}
+
+p {
+    margin: 1rem auto;
+    text-align: center;
+}
+
+button {
+    margin: 0;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: lightgreen;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Utils */
+.disabled {
+    color: rgba(0.3, 0.3, 0.3, 0.3);
+    background-color: rgba(0.3, 0.3, 0.3, 0.3);
+    border-color: rgba(0.3, 0.3, 0.3, 0.3);
+}
+
+.selected {
+    border: 2px solid lightskyblue;
+}
+
+.vertical-line {
+    border-right: 2px solid black;
+}
+
+.disabled {
+    background-color: rgba(0.3, 0.3, 0.3, 0.1);
+    color: rgba(0.3, 0.3, 0.3, 0.1);
+    border: none;
+}
+
+.lost {
+    background-color: lightcoral;
+}
+
+.win {
+    background-color: lightgreen;
+}
+
+.draw {
+    background-color: lightgoldenrodyellow;
+}

@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Play</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+    <main>
+        <h3 id="header">Play</h3>
+        <div class="content">
+            <div id="playerPrompt" class="result"></div>
+            <div class="list-group vertical-line">
+                <p>Your Choice</p>
+                <ul id="playerChoices">
+                    <li class="fire choice">Fire</li>
+                    <li class="water choice">Water</li>
+                    <li class="plant choice">Plant</li>
+                </ul>
+            </div>
+
+            <div class="list-group">
+                <p>Opponent choice</p>
+                <ul id="opponentChoices">
+                    <li class="fire choice disabled">Fire</li>
+                    <li class="water choice disabled">Water</li>
+                    <li class="plant choice disabled">Plant</li>
+                </ul>
+            </div>
+            <div id="opponentPrompt" class="result">
+            </div>
+        </div>
+        <div>
+            <a href="../index.html">Go Back</a>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
