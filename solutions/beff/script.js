@@ -120,34 +120,39 @@ function pokemonFight() {
         name: ``,
         xp: 0,
         lvl() {
-            return Math.floor(this.xp/3)+1;
+            return Math.floor(this.xp / 3) + 1;
         },
         stats: {
             health: 0,
             attackPower: 0,
             defencePower: 0,
             healthInit() {
-                this.health = player.lvl()*10;
-            }
+                this.health = player.lvl() * 10;
+            },
             attackPowerInit() {
-                this.attackPower = player.lvl()*10;
-            }
+                this.attackPower = player.lvl() * 10;
+            },
             defencePowerInit() {
-                this.defencePower = player.lvl()*10;
-            }
+                this.defencePower = player.lvl() * 10;
+            },
             attack(target) {
-                if (this.attackPower > target.stats.defencePower {
+                if (
+                    this.attackPower > target.stats.defencePower &&
+                    target.evade() === true
+                ) {
                     target.stats.health -= this.attackPower;
+                } else if (target.evade() === false) {
+                    return 'Taget evaded';
                 }
-            }
+            },
             evade() {
                 reply = false;
                 if (this.defencePower > target.stats.defencePower) {
                     reply = true;
                 }
                 return reply;
-            }
-        }
+            },
+        },
     };
     let enemy = {
         name: ``,
@@ -157,22 +162,18 @@ function pokemonFight() {
             attackPower: 0,
             defencePower: 0,
             healthInit() {
-                this.health = (enemy.lvl*6);
-            }
+                this.health = enemy.lvl * 6;
+            },
             attackPowerInit() {
-                this.attackPower = (enemy.lvl*6);
-            }
+                this.attackPower = enemy.lvl * 6;
+            },
             defencePowerInit() {
-                this.defencePower = (enemy.lvl*6);
-            }
-        }
+                this.defencePower = enemy.lvl * 6;
+            },
+        },
     };
-    const players =[
-        player,
-    ];
-    const enemys =[
-        enemy,
-    ];
+    const players = [player];
+    const enemys = [enemy];
     let game = true;
     while (game === true) {
         ('use strict');
