@@ -1,0 +1,19 @@
+{
+  "name": "enkelt-spel",
+  "version": "1.0.0",
+  "description": "Case 2 för JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Glimakra-Webbutvecklare-2020/enkelt-spel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Glimakra-Webbutvecklare-2020/enkelt-spel/issues"
+  },
+  "homepage": "https://github.com/Glimakra-Webbutvecklare-2020/enkelt-spel#readme"
+}
