@@ -1,5 +1,4 @@
 /* Global */
-
 html,
 body {
     width: 100%;
@@ -68,6 +67,7 @@ ul {
     margin: 2rem 3rem;
     width: 150px;
     height: 150px;
+    font-size: 5rem;
 }
 
 #playerChoices .choice:hover {
