@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_game.css">
+    <title>Hästjävel!</title>
+</head>
+
+<body>
+    <div id="game_container">
+        <div class="window_generic" id="game_charactercreator">
+            <h2>Customize your Häst</h2>
+            <div id="charactercreator_name">
+                <h3>Name!</h3>
+                <p>Hästjävel</p>
+            </div>
+            <h3>Stats!</h3>
+            <div id="charactercreator_stats">
+                <div class="stats_block" id="stats_health">
+                    <h3>Health: 15</h3>
+                    <button class="stats_pointbutton">+</button>
+                    <p>+0</p>
+                    <button class="stats_pointbutton">-</button>
+                </div>
+                <div class="stats_block" id="stats_attack">
+                    <h3>Attack: 2-7</h3>
+                    <button class="stats_pointbutton">+</button>
+                    <p>+0</p>
+                    <button class="stats_pointbutton">-</button>
+                </div>
+                <div class="stats_block" id="stats_defense">
+                    <h3>Defense: 5-10</h3>
+                    <button class="stats_pointbutton">+</button>
+                    <p>0+</p>
+                    <button class="stats_pointbutton">-</button>
+                </div>
+                <p>Points remaining: 5</p>
+            </div>
+        </div>
+        <div class="window_generic" id="game_arena">
+            <div class="game_character window_generic" id="character_horse">
+
+            </div>
+            <div class="game_character window_generic" id="character_hay">
+                
+            </div>
+        </div>
+        <div class="window_generic" id="game_controlpanel">
+            <button class="button_generic" id="attackbutton">Attack!</button>
+            <button class="button_generic" id="evadebutton">Evade!</button>
+            <button class="button_generic" id="annoybutton">Make an annoying sound!</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.window_generic {
+    padding: 0.4rem;
+    border: 2px solid black;
+}
+
+/* Character Creator */
+
+/* Game Arena */
+#game_arena {
+    display: flex;
+    flex-direction: row;
+}
+
+.game_character {
+    width: 8rem;
+    height: 8rem;
+}
+
+/* Control Panel */
