@@ -9,6 +9,7 @@ function GameCharacter(name, health, minDMG, maxDMG, minDEF, maxDEF) {
     this.maxDMG = maxDMG;
     this.minDEF = minDEF;
     this.maxDEF = maxDEF;
+    this.evasion = 0;
     this.isDead = false;
 }
 
@@ -47,14 +48,21 @@ function attack(attacker, target) {
     console.log(`${attacker.name} is attacking...`);
     target.health -= damageResult;
     console.log(`${attacker.name} deals ${damageResult} damage to ${target.name}!`);
-    cycleTurns();
+    nextTurn();
 }
 
 function evade(character) {
-    // let evadeResult = getRandomInteger(character.minDEF, character.maxDEF);
     console.log(`${character.name} is evading...`);
-    cycleTurns();
-    //TO DO: how do make this cool and good?
+    character.evasion = getRandomInteger(character.minDEF, character.maxDEF);
+    console.log(character.evasion);
+    nextTurn();
+}
+
+function annoy() {
+    //TO DO: implement randomizing the sound
+    horseNoises[0].play();
+    console.log("NEEEEIGH");
+    nextTurn();
 }
 
 function controlEnemyTurn() {
@@ -63,20 +71,23 @@ function controlEnemyTurn() {
         attack(enemy, player);
     } 
     else if(actionChoice === 2) {
-        evade();
+        evade(enemy);
     }
 }
 
 //this is the main "update loop" that runs after every turn
-function cycleTurns() {
+function nextTurn() {
     checkGameOver();
     if(isPlayerTurn === true) {
         isPlayerTurn = false;
         console.log(`${enemy.name}'s turn!`);
+        enemy.evasion = 0;
+        controlEnemyTurn();
     }
     else if (isPlayerTurn === false) {
         isPlayerTurn = true;
         console.log(`${player.name}'s turn!`);
+        player.evasion = 0;
     }
 
     //if player turn, enable actions
@@ -98,8 +109,7 @@ evadeButton.addEventListener('click', () => {
 
 const annoyButton = document.getElementById('annoybutton');
 annoyButton.addEventListener('click', () => {
-    console.log("NEEEEIGH!");
-    horseNoises[0].play();
+    annoy();
 });
 
 const characterCreatorWindow = document.getElementById('game_charactercreator');

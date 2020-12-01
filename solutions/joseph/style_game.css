@@ -3,9 +3,14 @@
     margin: 0;
 }
 
+/* Generic Classes & Elements */
 .window_generic {
     padding: 0.4rem;
     border: 2px solid black;
+}
+
+button {
+    padding: 0.3rem;
 }
 
 /* Character Creator */
