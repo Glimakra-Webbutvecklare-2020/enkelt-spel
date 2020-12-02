@@ -1,16 +1,16 @@
 # General
 
--   [] Användaren ska kunna starta ett spel
--   [] Spelaren ska kunna skapa en karaktär
+-   [x] Användaren ska kunna starta ett spel
+-   [x] Spelaren ska kunna skapa en karaktär
 -   [] Användaren ska kunna starta om ett spel utan att ladda om sidan.
 -   [] Användaren ska kunna ha olika speldrag.
 -   [] Användaren ska få en fördröjd feedback efter speldrag om spelet tillstånd.
 -   [] Dator-motståndarens motdrag ska bero på ett random värde.
--   [] Dator-motståndarens karaktärs properties ska slumpas för varje spelrunda.
+-   [x] Dator-motståndarens karaktärs properties ska slumpas för varje spelrunda.
 
 # Character
 
--   [] Karaktären ska minst ha tre properties
+-   [x] Karaktären ska minst ha tre properties
 -   [] “Health”, när en karaktär har 0 Health har spelaren förlorat
 -   [] “Attack Power”, ska tillsammans med en slumpad faktor göra skada med förmågan Attack.
 -   [] “Defence Power”, ska tillsammans med en slumpad faktor öka chansen att förmågan Evade undviker motståndarens attack

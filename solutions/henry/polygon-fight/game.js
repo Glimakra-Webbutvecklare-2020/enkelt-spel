@@ -1,5 +1,10 @@
 /* Global */
 const announcePrompt = document.querySelector("#announce-prompt");
+const gameContainer = document.querySelector("#game-container");
+const buttonContainer = document.querySelector(".button-container");
+const selectionContainer = document.querySelector(".selection-container");
+const statsContainer = document.querySelector(".stats-container");
+const fightContainer = document.querySelector(".fight-container");
 
 /* Selection */
 // Inital
@@ -63,8 +68,7 @@ const IsValidStats = (selectedPolygon, name, attack, defence) => {
     );
 };
 
-const createCharacter = (event) => {
-    console.log("Fight button clicked");
+const createCharacter = () => {
     const name = nameInput.value;
     const attack = Number(attackInput.value);
     const defence = Number(defenceInput.value);
@@ -75,16 +79,69 @@ const createCharacter = (event) => {
     }
 
     character = {
+        health: 100,
         element: selectedPolygon,
         name: nameInput.value,
         attack: Number(attackInput.value),
         defence: Number(defenceInput.value),
     };
 
+    return character;
+
     console.log(`Character has been created:${character}`);
+};
+
+const initGame = (event) => {
+    const player = createCharacter();
+    announcePrompt.textContent = "Fight";
+    console.log(gameContainer);
+    gameContainer.removeChild(selectionContainer);
+    gameContainer.removeChild(statsContainer);
+    gameContainer.removeChild(buttonContainer);
+    gameContainer.appendChild(fightContainer);
+    // Display fight container
+    fightContainer.style.display = "flex";
+
+    // Start game
+    game(player);
 };
 
 // Setup
 attackInput.addEventListener("change", validateAbility);
 defenceInput.addEventListener("change", validateAbility);
-fightButton.addEventListener("click", createCharacter);
+
+/* Fight */
+// Functions
+const createRandomOpponent = () => {
+    const randomIdx = Math.floor(Math.random() * polygons.length);
+    const opponentPolygon = polygons[randomIdx];
+    const randomAttackValue = Math.ceil(Math.random() * points);
+    return (opponent = {
+        health: 100,
+        element: opponentPolygon,
+        name: nameInput.value,
+        attack: randomAttackValue,
+        defence: points - randomAttackValue,
+    });
+};
+
+const populateContainer = (container, player, opponent) => {
+    // Todo create view of player with its Health, Attack and Defence
+    // Include buttons for abilities
+
+    // temporary just inject their element to have something
+    container.appendChild(player.element);
+    container.appendChild(opponent.element);
+    console.log(container, player, opponent);
+};
+
+const game = (player) => {
+    opponent = createRandomOpponent();
+    populateContainer(fightContainer, player, opponent);
+
+    // Main Game Loop
+    // while (opponent.health > 0 || player.health > 0) {}
+};
+
+// Setup
+fightButton.addEventListener("click", initGame);

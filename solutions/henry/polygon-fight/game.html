@@ -11,7 +11,7 @@
     <main>
         <a href="./index.html">Exit</a>
         <h1 id="announce-prompt" class="header">Select a polygon</h1>
-        <div class="container">
+        <div id="game-container" class="container">
             <div class="selection-container">
                 <div class="triangle polygon">△</div>
                 <div class="square polygon">□</div>
@@ -20,7 +20,7 @@
             <div class="stats-container">
                 <div class="stats-input-group">
                     <label class="stats-label" for="name">Name</label>
-                    <input type="text" class="stats-input" name="name" id="name">
+                    <input type="text" class="stats-input" name="name" id="name" placeholder="A cool name..">
                 </div>
                 <div class="stats-input-group">
                     <label class="stats-label" for="attack">Attack</label>
@@ -34,6 +34,10 @@
             <div class="button-container">
                 <button id="fight-button">Fight</button>
             </div>
+        </div>
+
+        <div class="fight-container">
+
         </div>
     </main>
     <script src="game.js"></script>

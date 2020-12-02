@@ -89,6 +89,15 @@ main {
     margin: 3rem auto;
 }
 
+.fight-container {
+    width: 60%;
+    margin: 0 auto;
+    max-width: 900px;
+    display: none;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
 #fight-button {
     margin: 0 auto;
     border: 1px solid black;
