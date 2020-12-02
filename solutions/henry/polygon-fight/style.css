@@ -41,13 +41,60 @@ main {
     padding: 0;
 }
 
+.stats-label {
+    display: inline;
+    margin-right: 1rem;
+}
+
+.stats-input-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+}
+
+.stats-input {
+    font-size: 1.5rem;
+    padding: 16px;
+    width: 50%;
+}
+
 .container {
     margin: 0 auto;
     width: 60%;
+    height: 100vh;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.selection-container {
+    width: 100%;
     max-width: 900px;
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+}
+
+.stats-container {
+    width: 60%;
+    margin: 0 auto;
+    max-width: 900px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.button-container {
+    margin: 3rem auto;
+}
+
+#fight-button {
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 1rem;
+    font-size: 2rem;
+    background-color: lightgreen;
 }
 
 .polygon {
