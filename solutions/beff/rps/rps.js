@@ -1,11 +1,13 @@
 const pSelections = document.querySelectorAll('.player');
 const cSelections = document.querySelectorAll('.computer');
 const anim = document.querySelector('#anim');
+const counter = document.querySelector('#counter');
+const restart = document.querySelector('#restart');
 let pSelect = undefined;
 let cSelection = undefined;
 let game = true;
-let wincounterPlayer = 0;
-let wincounterComputer = 0;
+let winCounterPlayer = 0;
+let winCounterComputer = 0;
 
 function cGuess(cSelections) {
     resetSelections(cSelections);
@@ -63,20 +65,38 @@ function andTheWinnerIs(result) {
         anim.textContent = 'Winner';
         pSelect.classList.add('win');
         cSelection.classList.add('lost');
+        winCounterPlayer++;
     } else if (result === 'draw') {
         anim.textContent = 'Draw!';
         pSelect.classList.add('draw');
         cSelection.classList.add('draw');
     } else {
+        winCounterComputer++;
         anim.textContent = 'Loser';
         pSelect.classList.add('lost');
         cSelection.classList.add('win');
     }
+    counter.textContent = `${winCounterPlayer}:${winCounterComputer}`;
 }
 function fullClear() {
     anim.textContent = ' ';
     resetSelections(pSelections);
     resetSelections(cSelections);
+}
+function restarter() {
+    if (winCounterPlayer === 3 || winCounterComputer === 3) {
+        // show restart button link
+        restartBtn.textContent = 'RESTART';
+        if (winCounterPlayer === 3) {
+            anim.classList.add('endGameEffectWin');
+        } else if (winCounterComputer === 3) {
+            anim.classList.add('endGameEffectLose');
+        }
+        // remove eventListener
+        pSelections.forEach((btn) => {
+            btn.removeEventListener('click', rps);
+        });
+    }
 }
 
 function rps(e) {
@@ -86,6 +106,7 @@ function rps(e) {
         cSelection = cGuess(cSelections);
         const result = resultOfGame(pSelect, cSelection);
         andTheWinnerIs(result);
+        restarter();
     }, 1500);
 }
 
