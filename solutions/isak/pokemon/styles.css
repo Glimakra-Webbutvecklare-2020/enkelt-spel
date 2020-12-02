@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  height: 300px;
+  background-color: #272727;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2em;
+}
+nav a, nav span {
+  font-size: 32px;
+  color: #ffffff;
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  background-color: #3a3a3a;
+}
+main #app {
+  width: 100%;
+  height: 100%;
+}
+main #app #create-character {
+  display: flex;
+  justify-content: center;
+}
+main #app #create-character .form {
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+main #app #create-character .form h1 {
+  margin: 0;
+}
+main #app #create-character .form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+main #app #create-character .form .form-group label {
+  margin: 8px 0;
+}
+main #app #create-character .form .form-group input {
+  padding: 0.77em;
+}
+main #app #create-character .form .button-group {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+main #app #create-character .form .button-group button {
+  padding: 0.6em;
+  width: 200px;
+}
+main #app #game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main #app #game .players {
+  width: 50%;
+  display: inherit;
+  flex-direction: row;
+}
+main #app #game .players .character {
+  background-color: #e7e7e7;
+  margin: 10px;
+  width: 100%;
+  position: relative;
+}
+main #app #game .players .character .health {
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+}
+main #app #game .players .character .thumbnail {
+  height: 300px;
+  width: 100%;
+  background-color: rebeccapurple;
+}
+main #app #game .players .character .thumbnail img {
+  width: inherit;
+  height: 100%;
+}
+main #app #game .players .character ul {
+  list-style: none;
+  margin: 0;
+  padding: 1em;
+}
+main #app #game .players .character ul li {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  border-bottom: 1px solid #cfcfcf;
+}
+main #app #game .players .character ul li:last-child {
+  border-bottom: none;
+}
+main #app #game .actions {
+  width: calc(50% - 10px * 2);
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-gap: 0.76em;
+}
+main #app #game .actions button {
+  width: 100%;
+  padding: 1em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 185ms ease;
+  display: flex;
+  justify-content: center;
+}
+main #app #game .actions button img {
+  width: 16px;
+  height: 16px;
+}
+main #app #game .actions button:hover {
+  background-color: #616161;
+}
+
+/*# sourceMappingURL=styles.css.map */
