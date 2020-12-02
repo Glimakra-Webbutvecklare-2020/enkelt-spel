@@ -15,25 +15,6 @@ body {
     }
 }
 
-nav {
-    height: 300px;
-    background-color: rgb(39, 39, 39);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2em;
-
-    a, span {
-        font-size: 32px;
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-}
-
 
 main {
     width: 100%;
