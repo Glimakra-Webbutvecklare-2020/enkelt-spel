@@ -40,3 +40,38 @@ main {
     text-align: center;
     padding: 0;
 }
+
+.container {
+    margin: 0 auto;
+    width: 60%;
+    max-width: 900px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+.polygon {
+    width: 30%;
+    max-width: 300px;
+    font-size: 10rem;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.polygon:hover {
+    transition: 0.3s;
+    box-shadow: 2px 2px 4px 4px;
+}
+
+.triangle {
+    font-size: 5rem;
+}
+
+.selected {
+    transition: 0.3s;
+    box-shadow: 2px 2px 4px 4px lightblue;
+    border-color: 2px solid lightblue;
+}
