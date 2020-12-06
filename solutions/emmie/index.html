@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../style.css">
-    <title>Template for Small Game</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Elephant moodgame</title>
 </head>
 
 <body>
     <main>
-        <h1>Template for Small Game</h1>
+        <h1>Elephant moodgame</h1>
+
+        <p id="instructions">
+            Game instructions: <br>
+            Happy beats sad <br>
+            Sleepy beats happy <br>
+            Sad beats sleepy <br>
+        </p>
+
+        <p>
+            Happy, sleepy or sad? Click image!
+        </p>
+        <section id="moods">
+            <img src="pictures/happy-elephant.jpg" alt="" data-id="happy">
+            <img src="pictures/sleepy-elephant.jpg" alt="" data-id="sleepy">
+            <img src="pictures/sad-elephant.jpg" alt="" data-id="sad">
+        </section>
+
+        <p>
+            Computer picked: <span id="computer"></span>
+        </p>
+
+        <p>
+            Winner: <span id="winner"></span>
+        </p>
 
     </main>
     <script src="script.js"></script>

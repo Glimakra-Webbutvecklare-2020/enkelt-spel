@@ -1,0 +1,12 @@
+img {
+    width: 200px;
+    margin: 20px;
+}
+
+#computer {
+    color: blue;
+}
+
+#instructions {
+    font-style: italic;
+}
