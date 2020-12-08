@@ -66,7 +66,7 @@ function selectItem(side, item) {
 //makes the enemy choose an item
 function makeEnemyChoice() {
     const choices = ["horse", "hay", "sword"];
-    const choiceIndex = Math.floor(Math.random() * (2 - 0 + 1));
+    const choiceIndex = Math.floor(Math.random() * choices.length);
     selectItem("enemy", choices[choiceIndex]);
 }
 
